@@ -13,5 +13,10 @@ public class Main {
         int ans[] = twoSumQue.twoSum(nums,target);
 
         System.out.println("[" + ans[0] + "," + ans[1] + "]");
+
+        int num2[] = {2,7,11,15}; int target2 = 9;
+        int ans2[] = twoSumQue.twoSum2(nums,target);
+
+        System.out.println("[" + ans2[0] + "," + ans2[1] + "]");
     }
 }
