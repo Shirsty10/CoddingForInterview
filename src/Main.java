@@ -1,6 +1,7 @@
 import com.shirsty.data.structure.Array.TwoSum;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,5 +19,12 @@ public class Main {
         int ans2[] = twoSumQue.twoSum2(nums,target);
 
         System.out.println("[" + ans2[0] + "," + ans2[1] + "]");
+
+        int []nums3 = {-1,0,1,2,-1,-4};
+
+        List<List<Integer>> ans3 = twoSumQue.threeSum(nums3);
+        for(List<Integer> list : ans3){
+            System.out.println(list);
+        }
     }
 }
