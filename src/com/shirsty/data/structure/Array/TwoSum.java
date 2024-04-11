@@ -49,7 +49,6 @@ public class TwoSum {
     }
 
     //LeetCode - 167. Two Sum II - Input Array Is Sorted
-
     /*Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order,
     find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1]
     and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
@@ -139,5 +138,43 @@ public class TwoSum {
             st++;
             ed--;
         }
+    }
+
+     //LeetCode -16. 3Sum Closest
+    /*Given an integer array nums of length n and an integer target,
+    find three integers in nums such that the sum is closest to target.
+     Return the sum of the three integers.
+     You may assume that each input would have exactly one solution.
+
+     Example 1:
+     Input: nums = [-1,2,1,-4], target = 1
+     Output: 2
+     Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+     */
+
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int clSum = Integer.MAX_VALUE;
+
+      for(int i=0;i<n-2;i++){
+          int st = i+1;
+          int ed = n-1;
+
+          while(st<ed){
+            int currSum = nums[st]+nums[ed]+ nums[i];
+
+            if(Math.abs(currSum-target)<Math.abs(target-clSum)){
+              clSum = currSum;
+            }
+            if(currSum<target){
+                st++;
+            }else{
+                ed--;
+            }
+
+          }
+      }
+      return clSum;
     }
 }
