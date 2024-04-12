@@ -27,9 +27,16 @@ public class Main {
 //            System.out.println(list);
 //        }
 
-        int []nums4 = {-1,2,1,-4};
-        int target3 = 1;
+//        int []nums4 = {-1,2,1,-4};
+//        int target3 = 1;
+//
+//        System.out.println(twoSumQue.threeSumClosest(nums4,target3));
 
-        System.out.println(twoSumQue.threeSumClosest(nums4,target3));
+         int []nums5 ={1,0,-1,0,-2,2}; int target = 0;
+
+        List<List<Integer>> ans5 = twoSumQue.fourSum(nums5,target);
+        for(List<Integer> list : ans5){
+            System.out.println("Values - " +list);
+        }
     }
 }
