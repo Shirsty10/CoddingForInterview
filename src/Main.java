@@ -1,3 +1,4 @@
+import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 
 import java.util.Arrays;
@@ -32,11 +33,18 @@ public class Main {
 //
 //        System.out.println(twoSumQue.threeSumClosest(nums4,target3));
 
-         int []nums5 ={1,0,-1,0,-2,2}; int target = 0;
+//         int []nums5 ={1,0,-1,0,-2,2}; int target = 0;
+//
+//        List<List<Integer>> ans5 = twoSumQue.fourSum(nums5,target);
+//        for(List<Integer> list : ans5){
+//            System.out.println("Values - " +list);
+//        }
 
-        List<List<Integer>> ans5 = twoSumQue.fourSum(nums5,target);
-        for(List<Integer> list : ans5){
-            System.out.println("Values - " +list);
-        }
+        Permutation permutation = new Permutation();
+        int[] nums = {1,2,3};
+        permutation.nextPermutation(nums);
+
+        Arrays.stream(nums).forEach(System.out:: print);
+
     }
 }
