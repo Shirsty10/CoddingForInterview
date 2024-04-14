@@ -58,4 +58,41 @@ public class Permutation {
         }
     }
 
+    //LeetCode - 1053. Previous Permutation With One Swap -- Having duplicates
+    /* Given an array of positive integers arr (not necessarily distinct), return the
+    lexicographically largest permutation that is smaller than arr, that can be made with exactly one swap.
+    If it cannot be done, then return the same array.
+
+     Note that a swap exchanges the positions of two numbers arr[i] and arr[j]
+
+     Example 1:
+    Input: arr = [3,2,1]
+    Output: [3,1,2]
+    Explanation: Swapping 2 and 1.
+     */
+
+    public int[] prevPermOpt1(int[] arr) {
+
+        int n=arr.length;
+        int i=n-1;
+        while( i>0 && arr[i]>=arr[i-1]){
+            i--;
+        }
+        i=i-1;
+
+        if(i<0) return arr;
+
+        int j=n-1;
+        while((arr[j] >= arr[i] && j > i))
+            j--;
+        while( j>0 && (arr[j-1]==arr[j])) j--;
+
+        swap(arr,i,j);
+
+
+        return arr;
+    }
+
+
+
 }

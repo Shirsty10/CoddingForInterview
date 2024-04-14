@@ -41,10 +41,14 @@ public class Main {
 //        }
 
         Permutation permutation = new Permutation();
-        int[] nums = {1,2,3};
-        permutation.nextPermutation(nums);
+//        int[] nums = {1,2,3};
+//        permutation.nextPermutation(nums);
+//
+//        Arrays.stream(nums).forEach(System.out:: print);
 
-        Arrays.stream(nums).forEach(System.out:: print);
+          int[] nums2 = {3,2,1};
+          permutation.prevPermOpt1(nums2);
+        Arrays.stream(nums2).forEach(System.out:: print);
 
     }
 }
