@@ -1,3 +1,4 @@
+import com.shirsty.data.structure.Array.MatrixBased;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 
@@ -46,9 +47,20 @@ public class Main {
 //
 //        Arrays.stream(nums).forEach(System.out:: print);
 
-          int[] nums2 = {3,2,1};
-          permutation.prevPermOpt1(nums2);
-        Arrays.stream(nums2).forEach(System.out:: print);
+//          int[] nums2 = {3,2,1};
+//          permutation.prevPermOpt1(nums2);
+//        Arrays.stream(nums2).forEach(System.out:: print);
+
+        MatrixBased matrixBased = new MatrixBased();
+        int matrix[][] = {{1,2,3},
+                      {4,5,6},
+                      {7,8,9}};
+
+        Arrays.stream(matrix).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
+        System.out.println();
+
+        List<Integer> list = matrixBased.spiralOrder(matrix);
+        list.stream().forEach(x-> System.out.print(x + " "));
 
     }
 }
