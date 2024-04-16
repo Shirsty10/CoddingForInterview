@@ -52,15 +52,21 @@ public class Main {
 //        Arrays.stream(nums2).forEach(System.out:: print);
 
         MatrixBased matrixBased = new MatrixBased();
-        int matrix[][] = {{1,2,3},
+//        int matrix[][] = {{1,2,3},
+//                      {4,5,6},
+//                      {7,8,9}};
+//
+//        Arrays.stream(matrix).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
+//        System.out.println();
+//
+//        List<Integer> list = matrixBased.spiralOrder(matrix);
+//        list.stream().forEach(x-> System.out.print(x + " "));
+
+        int matrix2[][] = {{1,2,3},
                       {4,5,6},
                       {7,8,9}};
-
-        Arrays.stream(matrix).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
-        System.out.println();
-
-        List<Integer> list = matrixBased.spiralOrder(matrix);
-        list.stream().forEach(x-> System.out.print(x + " "));
+         matrixBased.rotate(matrix2);
+        Arrays.stream(matrix2).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
 
     }
 }
