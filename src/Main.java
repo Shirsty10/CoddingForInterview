@@ -1,9 +1,11 @@
 import com.shirsty.data.structure.Array.MatrixBased;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
+import com.shirsty.data.structure.String.Anangram;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,11 +64,21 @@ public class Main {
 //        List<Integer> list = matrixBased.spiralOrder(matrix);
 //        list.stream().forEach(x-> System.out.print(x + " "));
 
-        int matrix2[][] = {{1,2,3},
-                      {4,5,6},
-                      {7,8,9}};
-         matrixBased.rotate(matrix2);
-        Arrays.stream(matrix2).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
+//        int matrix2[][] = {{1,2,3},
+//                      {4,5,6},
+//                      {7,8,9}};
+//         matrixBased.rotate(matrix2);
+//        Arrays.stream(matrix2)
+//        .flatMapToInt(Arrays:: stream)
+//        .forEach(x-> System.out.print(x + " "));
 
+        Anangram anangram = new Anangram();
+        String[] strs = {"eat","tea","tan","ate","nat","bat"};
+
+        List<List<String>> list = anangram.groupAnagrams(strs);
+        list.stream()
+                .map(String::valueOf)
+                .collect(Collectors.toList())
+                .stream().forEach(System.out::println);
     }
 }
