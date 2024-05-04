@@ -2,8 +2,11 @@ package com.shirsty.data.structure.Array;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.shirsty.data.structure.helper.ArrayHelper;
 
 public class MatrixBased {
+
+    ArrayHelper helper = new ArrayHelper();
 
     //LeetCode - 54. Spiral Matrix
     /*Given an m x n matrix, return all elements of the matrix in spiral order.
@@ -80,35 +83,61 @@ public class MatrixBased {
     public void rotate(int[][] matrix) {
 
       //transpose+reverse
-        transpose(matrix);
-        reverse(matrix);
+        helper.transpose(matrix);
+        helper.reverse(matrix);
     }
 
-    private void transpose(int[][] matrix) {
-        for(int row=0; row<matrix.length; row++){
-            for(int col=row+1; col<matrix[0].length; col++){
-                if(row!=col){
-                    int temp = matrix[row][col];
-                    matrix[row][col] = matrix[col][row];
-                    matrix[col][row] = temp;
+    //LeetCode - 498. Diagonal Traverse
+    /*Given an m x n matrix mat, return an array of all the elements of the array in a diagonal order.
+      Example 1:
+      Input: mat = [[1,2,3],[4,5,6],[7,8,9]]
+      Output: [1,2,4,7,5,3,6,8,9]
+
+     */
+
+    public int[] findDiagonalOrder(int[][] mat) {
+        int n= mat.length;
+        int m=mat[0].length;
+        int [] res = new int[n*m];
+        int idx =0;
+        boolean up =true;
+
+        int i=0,j=0;
+
+        while(i<n && j<m){
+            if(up==true){
+                while(i>0 && j<m-1){
+                    res[idx++] = mat[i][j];
+                    i--;
+                    j++;
                 }
-            }
-        }
-    }
-    private void reverse(int[][] matrix){
-      for(int row =0;row<matrix.length;row++){
-          int st = 0;
-          int ed = matrix[row].length-1;
-          while(st<ed){
-              int temp = matrix[row][st];
-              matrix[row][st] = matrix[row][ed];
-              matrix[row][ed] = temp;
+                res[idx++] = mat[i][j];
+                if(j==m-1){
+                    i++;
+                }else{
+                    j++;
+                }
 
-              st++;
-              ed--;
-          }
-      }
+            }else{
+                while(i<n-1 && j>0){
+                    res[idx++] = mat[i][j];
+                    i++;
+                    j--;
+                }
+                res[idx++] = mat[i][j];
+                if(i==n-1){
+                    j++;
+                }else{
+                    i++;
+                }
+
+            }
+            up=!up;
+        }
+        return res;
     }
+
+
 
     
 }

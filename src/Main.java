@@ -59,26 +59,45 @@ public class Main {
 //                      {7,8,9}};
 //
 //        Arrays.stream(matrix).flatMapToInt(Arrays:: stream).forEach(x-> System.out.print(x + " "));
+
 //        System.out.println();
 //
 //        List<Integer> list = matrixBased.spiralOrder(matrix);
 //        list.stream().forEach(x-> System.out.print(x + " "));
 
-//        int matrix2[][] = {{1,2,3},
-//                      {4,5,6},
-//                      {7,8,9}};
+        int matrix2[][] = {{1,2,3},
+                      {4,5,6},
+                      {7,8,9}};
 //         matrixBased.rotate(matrix2);
 //        Arrays.stream(matrix2)
 //        .flatMapToInt(Arrays:: stream)
 //        .forEach(x-> System.out.print(x + " "));
 
+
         Anangram anangram = new Anangram();
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
 
         List<List<String>> list = anangram.groupAnagrams(strs);
-        list.stream()
-                .map(String::valueOf)
-                .collect(Collectors.toList())
-                .stream().forEach(System.out::println);
+
+        // Extrass---- The flatMap function combines a map and a flat operation.
+        //  Flattening means converting something
+        // like [ [1,2,3],[4,5,6,7],[8,9] ] to [ 1,2,3,4,5,6,7,8,9 ] i.e. converting a 2D array to a 1D array.
+
+//        list.stream()
+//                .map(String::valueOf)
+//                .collect(Collectors.toList())
+//                .stream().forEach(System.out::println);
+//
+//        System.out.println("-------------------");
+//
+//        list.stream()
+//                .flatMap(List:: stream)
+//                .forEach(System.out::println);
+
+        int matrix3[][] = {{1,2,3},
+                {4,5,6},
+                {7,8,9}};
+        int res[]  =matrixBased.findDiagonalOrder(matrix3);
+        Arrays.stream(res).forEach(x-> System.out.print(x + " "));
     }
 }
