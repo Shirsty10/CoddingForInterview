@@ -1,4 +1,5 @@
 import com.shirsty.data.structure.Array.MatrixBased;
+import com.shirsty.data.structure.Array.OneDimenArrayQue;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 import com.shirsty.data.structure.String.Anangram;
@@ -74,10 +75,10 @@ public class Main {
 //        .forEach(x-> System.out.print(x + " "));
 
 
-        Anangram anangram = new Anangram();
-        String[] strs = {"eat","tea","tan","ate","nat","bat"};
-
-        List<List<String>> list = anangram.groupAnagrams(strs);
+//        Anangram anangram = new Anangram();
+//        String[] strs = {"eat","tea","tan","ate","nat","bat"};
+//
+//        List<List<String>> list = anangram.groupAnagrams(strs);
 
         // Extrass---- The flatMap function combines a map and a flat operation.
         //  Flattening means converting something
@@ -94,10 +95,15 @@ public class Main {
 //                .flatMap(List:: stream)
 //                .forEach(System.out::println);
 
-        int matrix3[][] = {{1,2,3},
-                {4,5,6},
-                {7,8,9}};
-        int res[]  =matrixBased.findDiagonalOrder(matrix3);
-        Arrays.stream(res).forEach(x-> System.out.print(x + " "));
+//        int matrix3[][] = {{1,2,3},
+//                {4,5,6},
+//                {7,8,9}};
+//        int res[]  =matrixBased.findDiagonalOrder(matrix3);
+//        Arrays.stream(res).forEach(x-> System.out.print(x + " "));
+
+        OneDimenArrayQue oneDQue = new OneDimenArrayQue();
+        int nums[] = {2,0,2,1,1,0};
+        oneDQue.sortColors(nums);
+        Arrays.stream(nums).forEach(x -> System.out.print(x + " "));
     }
 }
