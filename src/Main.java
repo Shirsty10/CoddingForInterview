@@ -101,9 +101,19 @@ public class Main {
 //        int res[]  =matrixBased.findDiagonalOrder(matrix3);
 //        Arrays.stream(res).forEach(x-> System.out.print(x + " "));
 
-        OneDimenArrayQue oneDQue = new OneDimenArrayQue();
-        int nums[] = {2,0,2,1,1,0};
-        oneDQue.sortColors(nums);
-        Arrays.stream(nums).forEach(x -> System.out.print(x + " "));
+        int matrix3[][] = {{3,3,1,1},
+                          {2,2,1,2},
+                          {1,1,1,2}};
+
+        int res[][] = matrixBased.diagonalSort(matrix3);
+        Arrays.stream(res).flatMapToInt(Arrays:: stream).forEach(x -> System.out.print(x+" "));
+
+
+//        OneDimenArrayQue oneDQue = new OneDimenArrayQue();
+//        int nums[] = {2,0,2,1,1,0};
+//        oneDQue.sortColors(nums);
+//        Arrays.stream(nums).forEach(x -> System.out.print(x + " "));
+
+
     }
 }
