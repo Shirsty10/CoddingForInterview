@@ -14,7 +14,6 @@ public class MatrixBased {
      Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
      Output: [1,2,3,6,9,8,7,4,5]
      */
-
     public List<Integer> spiralOrder(int[][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         int m= matrix.length; //row
@@ -148,7 +147,6 @@ public class MatrixBased {
     Input: mat = [[3,3,1,1],[2,2,1,2],[1,1,1,2]]
     Output: [[1,1,1,1],[1,2,2,2],[1,2,3,3]]
      */
-
     public int[][] diagonalSort(int[][] mat) {
         int n = mat.length;
         int m= mat[0].length;

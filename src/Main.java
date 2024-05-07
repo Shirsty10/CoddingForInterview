@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         //System.out.println("Hello world!");
-
+//---------------------------Two Sum Que------------------------------------------------------------------
         TwoSum twoSumQue = new TwoSum();
 //        int []nums = {2,7,11,15};
 //        int target = 9;
@@ -44,6 +44,7 @@ public class Main {
 //            System.out.println("Values - " +list);
 //        }
 
+ // ------------------------Permutation Que---------------------------------------------------
         Permutation permutation = new Permutation();
 //        int[] nums = {1,2,3};
 //        permutation.nextPermutation(nums);
@@ -53,6 +54,30 @@ public class Main {
 //          int[] nums2 = {3,2,1};
 //          permutation.prevPermOpt1(nums2);
 //        Arrays.stream(nums2).forEach(System.out:: print);
+
+//------------------------Anagram Based Que-------------------------------------------------
+
+        Anangram anangram = new Anangram();
+//        String[] strs = {"eat","tea","tan","ate","nat","bat"};
+//
+//        List<List<String>> list = anangram.groupAnagrams(strs);
+
+        // Extrass---- The flatMap function combines a map and a flat operation.
+        //  Flattening means converting something
+        // like [ [1,2,3],[4,5,6,7],[8,9] ] to [ 1,2,3,4,5,6,7,8,9 ] i.e. converting a 2D array to a 1D array.
+
+//        list.stream()
+//                .map(String::valueOf)
+//                .collect(Collectors.toList())
+//                .stream().forEach(System.out::println);
+//
+//        System.out.println("-------------------");
+//
+//        list.stream()
+//                .flatMap(List:: stream)
+//                .forEach(System.out::println);
+
+//-------------------------------Matrix Based Ques---------------------------------------------------------
 
         MatrixBased matrixBased = new MatrixBased();
 //        int matrix[][] = {{1,2,3},
@@ -74,45 +99,36 @@ public class Main {
 //        .flatMapToInt(Arrays:: stream)
 //        .forEach(x-> System.out.print(x + " "));
 
-
-//        Anangram anangram = new Anangram();
-//        String[] strs = {"eat","tea","tan","ate","nat","bat"};
-//
-//        List<List<String>> list = anangram.groupAnagrams(strs);
-
-        // Extrass---- The flatMap function combines a map and a flat operation.
-        //  Flattening means converting something
-        // like [ [1,2,3],[4,5,6,7],[8,9] ] to [ 1,2,3,4,5,6,7,8,9 ] i.e. converting a 2D array to a 1D array.
-
-//        list.stream()
-//                .map(String::valueOf)
-//                .collect(Collectors.toList())
-//                .stream().forEach(System.out::println);
-//
-//        System.out.println("-------------------");
-//
-//        list.stream()
-//                .flatMap(List:: stream)
-//                .forEach(System.out::println);
-
 //        int matrix3[][] = {{1,2,3},
 //                {4,5,6},
 //                {7,8,9}};
 //        int res[]  =matrixBased.findDiagonalOrder(matrix3);
 //        Arrays.stream(res).forEach(x-> System.out.print(x + " "));
 
-        int matrix3[][] = {{3,3,1,1},
-                          {2,2,1,2},
-                          {1,1,1,2}};
+//        int matrix3[][] = {{3,3,1,1},
+//                          {2,2,1,2},
+//                          {1,1,1,2}};
+//
+//        int res[][] = matrixBased.diagonalSort(matrix3);
+//        Arrays.stream(res).flatMapToInt(Arrays:: stream).forEach(x -> System.out.print(x+" "));
 
-        int res[][] = matrixBased.diagonalSort(matrix3);
-        Arrays.stream(res).flatMapToInt(Arrays:: stream).forEach(x -> System.out.print(x+" "));
+ //--------------------------One Dimentional Array Que---------------------------------------------------
 
-
-//        OneDimenArrayQue oneDQue = new OneDimenArrayQue();
+        OneDimenArrayQue oneDQue = new OneDimenArrayQue();
 //        int nums[] = {2,0,2,1,1,0};
 //        oneDQue.sortColors(nums);
 //        Arrays.stream(nums).forEach(x -> System.out.print(x + " "));
+
+        int nums[] = {1,2,3,4};
+        int[][] queries = {{1,0},
+                           {-3,1},
+                           {-4,0},
+                            {2,3}};
+
+        int res[] =oneDQue.sumEvenAfterQueries(nums,queries);
+        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
+
+
 
 
     }
