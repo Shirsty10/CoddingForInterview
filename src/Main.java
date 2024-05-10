@@ -119,16 +119,21 @@ public class Main {
 //        oneDQue.sortColors(nums);
 //        Arrays.stream(nums).forEach(x -> System.out.print(x + " "));
 
-        int nums[] = {1,2,3,4};
-        int[][] queries = {{1,0},
-                           {-3,1},
-                           {-4,0},
-                            {2,3}};
+//        int nums[] = {1,2,3,4};
+//        int[][] queries = {{1,0},
+//                           {-3,1},
+//                           {-4,0},
+//                            {2,3}};
+//
+//        int res[] =oneDQue.sumEvenAfterQueries(nums,queries);
+//        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
 
-        int res[] =oneDQue.sumEvenAfterQueries(nums,queries);
-        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
+//        int nums[] = {1,2,3,4,5};
+//         System.out.println("Increasing Triplet Subsequence - " + oneDQue.increasingTriplet(nums));
 
-
+        int []nums = {23,2,4,6,7};
+        int k = 6;
+         System.out.println("Continuous Subarray sum found - " + oneDQue.checkSubarraySum(nums,k));
 
 
     }

@@ -2,6 +2,8 @@ package com.shirsty.data.structure.Array;
 
 import com.shirsty.data.structure.helper.OneDimeArrayHelper;
 
+import java.util.HashMap;
+
 public class OneDimenArrayQue {
 
     OneDimeArrayHelper helper = new OneDimeArrayHelper();
@@ -74,6 +76,71 @@ public class OneDimenArrayQue {
             res[i] = evnsum;
         }
         return res;
+    }
+
+    //LeetCode -334. Increasing Triplet Subsequence
+    /*Given an integer array nums, return true if there exists a triple of indices (i, j, k)
+    such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+      Example 1:
+      Input: nums = [1,2,3,4,5]
+      Output: true
+      Explanation: Any triplet where i < j < k is valid.
+     */
+    public boolean increasingTriplet(int[] nums) {
+        int num1 =Integer.MAX_VALUE;
+        int num2 = Integer.MAX_VALUE;
+
+        int num3;
+
+        for(int i=0;i<nums.length;i++){
+            num3 = nums[i];
+
+            if(num3<=num1){
+                num1 = num3;
+            }else if(num3<=num2){
+                num2 = num3;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //LeetCode- 523. Continuous Subarray Sum
+    /*Given an integer array nums and an integer k, return true if nums has a good subarray or false otherwise.
+      A good subarray is a subarray where:
+
+        its length is at least two, and
+        the sum of the elements of the subarray is a multiple of k.
+        Note that:
+        A subarray is a contiguous part of the array.
+        An integer x is a multiple of k if there exists an integer n such that x = n * k. 0 is always a multiple of k.
+
+        Example 1:
+        Input: nums = [23,2,4,6,7], k = 6
+        Output: true
+        Explanation: [2, 4] is a continuous subarray of size 2 whose elements sum up to 6.
+
+     */
+    public boolean checkSubarraySum(int[] nums, int k) {
+        int n=nums.length;
+
+        HashMap<Integer,Integer> mp = new HashMap<>();
+        int sum=0;
+        mp.put(0,-1);
+        for(int i=0;i<n;i++){
+            sum+=nums[i];
+            int reminder = sum%k;
+
+            if(mp.containsKey(reminder)){
+                if(Math.abs(i-mp.get(reminder))>=2)
+                    return true;
+            }else{
+                mp.put(reminder,i);
+            }
+        }
+        return false;
     }
 
 
