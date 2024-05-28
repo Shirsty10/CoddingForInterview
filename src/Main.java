@@ -131,9 +131,13 @@ public class Main {
 //        int nums[] = {1,2,3,4,5};
 //         System.out.println("Increasing Triplet Subsequence - " + oneDQue.increasingTriplet(nums));
 
-        int []nums = {23,2,4,6,7};
-        int k = 6;
-         System.out.println("Continuous Subarray sum found - " + oneDQue.checkSubarraySum(nums,k));
+//        int []nums = {23,2,4,6,7};
+//        int k = 6;
+//         System.out.println("Continuous Subarray sum found - " + oneDQue.checkSubarraySum(nums,k));
+
+        int nums[] = {4,5,2,1}, queries[] = {3,10,21};
+        int res[] =oneDQue.answerQueries(nums,queries);
+        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
 
 
     }
