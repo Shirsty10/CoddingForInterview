@@ -1,12 +1,9 @@
+import com.shirsty.data.structure.Array.IntervalBased.IntervalOverlap;
 import com.shirsty.data.structure.Array.MatrixBased;
 import com.shirsty.data.structure.Array.OneDimenArrayQue;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 import com.shirsty.data.structure.String.Anangram;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -135,9 +132,15 @@ public class Main {
 //        int k = 6;
 //         System.out.println("Continuous Subarray sum found - " + oneDQue.checkSubarraySum(nums,k));
 
-        int nums[] = {4,5,2,1}, queries[] = {3,10,21};
-        int res[] =oneDQue.answerQueries(nums,queries);
-        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
+//        int nums[] = {4,5,2,1}, queries[] = {3,10,21};
+//        int res[] =oneDQue.answerQueries(nums,queries);
+//        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
+
+//------------------------------------Interval Baes Question ---------------------------------------------------------
+
+        IntervalOverlap intervalOverlap = new IntervalOverlap();
+        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
+         System.out.println("Min Arrows to Burst all balloons - " + intervalOverlap.findMinArrowShots(points));
 
 
     }
