@@ -139,9 +139,10 @@ public class Main {
 //------------------------------------Interval Baes Question ---------------------------------------------------------
 
         IntervalOverlap intervalOverlap = new IntervalOverlap();
-        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
-         System.out.println("Min Arrows to Burst all balloons - " + intervalOverlap.findMinArrowShots(points));
+//        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
+//         System.out.println("Min Arrows to Burst all balloons - " + intervalOverlap.findMinArrowShots(points));
 
-
+        int[][] points = {{1,2},{2,3},{3,4},{1,3}};
+        System.out.println("Min removals - "+ intervalOverlap.eraseOverlapIntervals(points));
     }
 }
