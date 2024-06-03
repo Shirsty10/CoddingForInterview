@@ -176,7 +176,7 @@ public class OneDimenArrayQue {
         }
 
         for(int i=0;i<queries.length;i++){
-            int val = helper.binarySearchAlmost(nums,queries[i],n);
+            int val = helper.binarySearchSmallerAlmost(nums,queries[i],n);
             ans[i] = val;
         }
         return ans;

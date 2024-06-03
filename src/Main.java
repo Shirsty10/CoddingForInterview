@@ -5,6 +5,8 @@ import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 import com.shirsty.data.structure.String.Anangram;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -142,7 +144,12 @@ public class Main {
 //        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
 //         System.out.println("Min Arrows to Burst all balloons - " + intervalOverlap.findMinArrowShots(points));
 
-        int[][] points = {{1,2},{2,3},{3,4},{1,3}};
-        System.out.println("Min removals - "+ intervalOverlap.eraseOverlapIntervals(points));
+//        int[][] points = {{1,2},{2,3},{3,4},{1,3}};
+//        System.out.println("Min removals - "+ intervalOverlap.eraseOverlapIntervals(points));
+
+        int[][] intervals = {{3,4},{2,3},{1,2}};
+        int ans[] = intervalOverlap.findRightInterval(intervals);
+
+        Arrays.stream(ans).forEach(i-> System.out.print(i+ " "));
     }
 }

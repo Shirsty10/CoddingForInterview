@@ -1,8 +1,13 @@
 package com.shirsty.data.structure.Array.IntervalBased;
 
+import com.shirsty.data.structure.helper.OneDimeArrayHelper;
+
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class IntervalOverlap {
+
+    OneDimeArrayHelper helper = new OneDimeArrayHelper();
 
     //Leetcode-452. Minimum Number of Arrows to Burst Balloons
      /*There are some spherical balloons taped onto a flat wall that represents the XY-plane.
@@ -79,6 +84,46 @@ public class IntervalOverlap {
 
         }
         return count;
+    }
+
+    //LeetCode - 436. Find Right Interval
+    /*You are given an array of intervals, where intervals[i] = [starti, endi] and each starti is unique.
+        The right interval for an interval i is an interval j such that startj >= endi and startj is minimized.
+         Note that i may equal j.
+        Return an array of right interval indices for each interval i. If no right interval exists for interval i,
+        then put -1 at index i.
+
+        Example 2:
+        Input: intervals = [[3,4],[2,3],[1,2]]
+        Output: [-1,0,1]
+        Explanation: There is no right interval for [3,4].
+        The right interval for [2,3] is [3,4] since start0 = 3 is the smallest start that is >= end1 = 3.
+        The right interval for [1,2] is [2,3] since start1 = 2 is the smallest start that is >= end2 = 2.
+     */
+    public int[] findRightInterval(int[][] intervals) {
+        int n= intervals.length;
+        int[] starts = new int[n];
+        int[] ans = new int[n];
+        HashMap<Integer,Integer> mp = new HashMap<>();
+
+        for(int i=0;i<n;i++){
+            starts[i] = intervals[i][0];
+            mp.put(intervals[i][0],i);
+        }
+
+        Arrays.sort(starts);
+
+        for(int i=0;i<n;i++){
+            int element = helper.binarySearchLargerAlmost(starts,intervals[i][1],n);
+
+            if(element == -1){
+                ans[i] = -1;
+            }else{
+                ans[i] = mp.get(starts[element]);
+            }
+        }
+        return ans;
+
     }
 }
 
