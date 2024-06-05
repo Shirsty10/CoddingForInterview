@@ -147,9 +147,16 @@ public class Main {
 //        int[][] points = {{1,2},{2,3},{3,4},{1,3}};
 //        System.out.println("Min removals - "+ intervalOverlap.eraseOverlapIntervals(points));
 
-        int[][] intervals = {{3,4},{2,3},{1,2}};
-        int ans[] = intervalOverlap.findRightInterval(intervals);
+//        int[][] intervals = {{3,4},{2,3},{1,2}};
+//        int ans[] = intervalOverlap.findRightInterval(intervals);
+//
+//        Arrays.stream(ans).forEach(i-> System.out.print(i+ " "));
 
-        Arrays.stream(ans).forEach(i-> System.out.print(i+ " "));
+       int[][] firstList = {{0,2},{5,10},{13,23},{24,25}};
+        int[][]secondList = {{1,5},{8,12},{15,24},{25,26}};
+        int ans[][] = intervalOverlap.intervalIntersection(firstList,secondList);
+
+        Arrays.stream(ans).forEach(row->System.out.print(Arrays.toString(row) + " "));
+
     }
 }

@@ -2,8 +2,10 @@ package com.shirsty.data.structure.Array.IntervalBased;
 
 import com.shirsty.data.structure.helper.OneDimeArrayHelper;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class IntervalOverlap {
 
@@ -125,6 +127,48 @@ public class IntervalOverlap {
         return ans;
 
     }
+
+    //LeetCode -986. Interval List Intersections
+    /*You are given two lists of closed intervals, firstList and secondList, where firstList[i] = [starti, endi]
+    and secondList[j] = [startj, endj]. Each list of intervals is pairwise disjoint and in sorted order.
+    Return the intersection of these two interval lists.
+    A closed interval [a, b] (with a <= b) denotes the set of real numbers x with a <= x <= b.
+    The intersection of two closed intervals is a set of real numbers that are either empty or represented as a
+     closed interval. For example, the intersection of [1, 3] and [2, 4] is [2, 3].
+
+    Input: firstList = [[0,2],[5,10],[13,23],[24,25]], secondList = [[1,5],[8,12],[15,24],[25,26]]
+    Output: [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
+     */
+
+    public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
+        int ptr1 = 0;
+        int ptr2 =0;
+
+        List<int[]> ans = new ArrayList<>();
+
+        while(ptr1<firstList.length && ptr2<secondList.length){
+            int fs = firstList[ptr1][0];
+            int fe = firstList[ptr1][1];
+            int ss = secondList[ptr2][0];
+            int se = secondList[ptr2][1];
+
+            if(fs<=se && fe>=ss){
+                ans.add(new int[] {Math.max(fs,ss), Math.min(fe,se)});
+            }
+            if(fe<se) ptr1++;
+            else ptr2++;
+
+        }
+
+        int[][] res = new int[ans.size()][2];
+        for(int i=0;i<ans.size();i++){
+            res[i] = ans.get(i);
+        }
+
+        return res;
+
+    }
+
 }
 
 
