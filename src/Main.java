@@ -1,3 +1,4 @@
+import com.shirsty.data.structure.Array.DFSBased.IslandBased;
 import com.shirsty.data.structure.Array.IntervalBased.IntervalOverlap;
 import com.shirsty.data.structure.Array.MatrixBased;
 import com.shirsty.data.structure.Array.OneDimenArrayQue;
@@ -152,11 +153,21 @@ public class Main {
 //
 //        Arrays.stream(ans).forEach(i-> System.out.print(i+ " "));
 
-       int[][] firstList = {{0,2},{5,10},{13,23},{24,25}};
-        int[][]secondList = {{1,5},{8,12},{15,24},{25,26}};
-        int ans[][] = intervalOverlap.intervalIntersection(firstList,secondList);
+//       int[][] firstList = {{0,2},{5,10},{13,23},{24,25}};
+//        int[][]secondList = {{1,5},{8,12},{15,24},{25,26}};
+//        int ans[][] = intervalOverlap.intervalIntersection(firstList,secondList);
+//
+//        Arrays.stream(ans).forEach(row->System.out.print(Arrays.toString(row) + " "));
 
-        Arrays.stream(ans).forEach(row->System.out.print(Arrays.toString(row) + " "));
+ //------------------------------------DFS Based Question-------------------------------------------------------------
+
+        IslandBased islandQue = new IslandBased();
+        char [][] grid = {
+                {'1','1','1','1','0'},
+                {'1','1','0','1','0'},
+                {'1','1','0','0','0'},
+                {'0','0','0','0','0'}};
+       System.out.println("Number of Islands - " + islandQue.numIslands(grid));
 
     }
 }
