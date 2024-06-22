@@ -162,12 +162,19 @@ public class Main {
  //------------------------------------DFS Based Question-------------------------------------------------------------
 
         IslandBased islandQue = new IslandBased();
-        char [][] grid = {
-                {'1','1','1','1','0'},
-                {'1','1','0','1','0'},
-                {'1','1','0','0','0'},
-                {'0','0','0','0','0'}};
-       System.out.println("Number of Islands - " + islandQue.numIslands(grid));
+//        char [][] grid = {
+//                {'1','1','1','1','0'},
+//                {'1','1','0','1','0'},
+//                {'1','1','0','0','0'},
+//                {'0','0','0','0','0'}};
+//       System.out.println("Number of Islands - " + islandQue.numIslands(grid));
 
+        int [][]grid = {{1,1,1,1,1,1,1,0},
+                        {1,0,0,0,0,1,1,0},
+                        {1,0,1,0,1,1,1,0},
+                        {1,0,0,0,0,1,0,1},
+                        {1,1,1,1,1,1,1,0}};
+
+        System.out.println("Number of closed Islands - " + islandQue.closedIsland(grid));
     }
 }
