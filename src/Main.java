@@ -1,3 +1,4 @@
+import com.shirsty.data.structure.Array.BFSBased.ShortestPath;
 import com.shirsty.data.structure.Array.DFSBased.IslandBased;
 import com.shirsty.data.structure.Array.IntervalBased.IntervalOverlap;
 import com.shirsty.data.structure.Array.MatrixBased;
@@ -169,12 +170,19 @@ public class Main {
 //                {'0','0','0','0','0'}};
 //       System.out.println("Number of Islands - " + islandQue.numIslands(grid));
 
-        int [][]grid = {{1,1,1,1,1,1,1,0},
-                        {1,0,0,0,0,1,1,0},
-                        {1,0,1,0,1,1,1,0},
-                        {1,0,0,0,0,1,0,1},
-                        {1,1,1,1,1,1,1,0}};
+//        int [][]grid = {{1,1,1,1,1,1,1,0},
+//                        {1,0,0,0,0,1,1,0},
+//                        {1,0,1,0,1,1,1,0},
+//                        {1,0,0,0,0,1,0,1},
+//                        {1,1,1,1,1,1,1,0}};
+//
+//        System.out.println("Number of closed Islands - " + islandQue.closedIsland(grid));
 
-        System.out.println("Number of closed Islands - " + islandQue.closedIsland(grid));
+//--------------------------------------BFS Based Ques-----------------------------------------------------------------
+
+        ShortestPath sp = new ShortestPath();
+
+        int [][]grid = {{0,0,0},{1,1,0},{1,1,0}};
+        System.out.println("Shorstest Path : "+ sp.shortestPathBinaryMatrix(grid));
     }
 }
