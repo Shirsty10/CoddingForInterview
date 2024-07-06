@@ -140,6 +140,11 @@ public class Main {
 //        int res[] =oneDQue.answerQueries(nums,queries);
 //        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
 
+        int nums[] = {0,1,0,3,12};
+        oneDQue.moveZeroes(nums);
+        System.out.println("Resultant Array - ");
+        Arrays.stream(nums).forEach(x-> System.out.print(x+ ", "));
+
 //------------------------------------Interval Baes Question ---------------------------------------------------------
 
         IntervalOverlap intervalOverlap = new IntervalOverlap();
@@ -182,7 +187,7 @@ public class Main {
 
         ShortestPath sp = new ShortestPath();
 
-        int [][]grid = {{0,0,0},{1,1,0},{1,1,0}};
-        System.out.println("Shorstest Path : "+ sp.shortestPathBinaryMatrix(grid));
+//        int [][]grid = {{0,0,0},{1,1,0},{1,1,0}};
+//        System.out.println("Shorstest Path : "+ sp.shortestPathBinaryMatrix(grid));
     }
 }
