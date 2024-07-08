@@ -140,10 +140,20 @@ public class Main {
 //        int res[] =oneDQue.answerQueries(nums,queries);
 //        Arrays.stream(res).forEach(x-> System.out.print(x+ " "));
 
-        int nums[] = {0,1,0,3,12};
-        oneDQue.moveZeroes(nums);
-        System.out.println("Resultant Array - ");
-        Arrays.stream(nums).forEach(x-> System.out.print(x+ ", "));
+//        int nums[] = {0,1,0,3,12};
+//        oneDQue.moveZeroes(nums);
+//        System.out.println("Resultant Array - ");
+//        Arrays.stream(nums).forEach(x-> System.out.print(x+ ", "));
+
+          int[] nums = {4,2,5,9,3,6,5,2,8,7};
+          //oneDQue.sortArrayByParity(nums);
+            oneDQue.sortArrayByParityII(nums);
+
+          Arrays.stream(nums).forEach(x-> System.out.print(x+", "));
+
+
+
+
 
 //------------------------------------Interval Baes Question ---------------------------------------------------------
 

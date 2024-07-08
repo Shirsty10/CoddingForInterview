@@ -213,4 +213,63 @@ public class OneDimenArrayQue {
 
     }
 
+    //LeetCode - 905. Sort Array By Parity
+    /*Given an integer array nums, move all the even integers at the beginning of the array followed by all
+    the odd integers.
+    Return any array that satisfies this condition.
+
+    Example 1:
+    Input: nums = [3,1,2,4]
+    Output: [2,4,3,1]
+    Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
+     */
+    public int[] sortArrayByParity(int[] nums) {
+        int n= nums.length;
+        int r=0;
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]%2==0){
+                helper.swap(nums,i,r);
+                r++;
+            }
+        }
+        return nums;
+    }
+
+    //Leetcode - 922. Sort Array By Parity II
+    /* Given an array of integers nums, half of the integers in nums are odd, and the other half are even.
+    Sort the array so that whenever nums[i] is odd, i is odd, and whenever nums[i] is even, i is even.
+    Return any answer array that satisfies this condition.
+
+    Example 1:
+    Input: nums = [4,2,5,7]
+    Output: [4,5,2,7]
+    Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
+     */
+    public int[] sortArrayByParityII(int[] nums) {
+        int n= nums.length;
+        if(n<=1) return nums;
+        int optr =1;
+        int eptr =0;
+
+        while(optr<n && eptr<n){
+            if(nums[optr]%2 ==0 && nums[eptr]%2 !=0){
+                helper.swap(nums,optr,eptr);
+                optr+=2;
+                eptr+=2;
+
+            }else if(nums[optr]%2 ==0){
+                eptr+=2;
+            }else if(nums[eptr]%2 !=0){
+                optr+=2;
+            }else{
+                optr+=2;
+                eptr+=2;
+            }
+
+
+        }
+        return nums;
+    }
+
 }
