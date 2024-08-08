@@ -145,11 +145,15 @@ public class Main {
 //        System.out.println("Resultant Array - ");
 //        Arrays.stream(nums).forEach(x-> System.out.print(x+ ", "));
 
-          int[] nums = {4,2,5,9,3,6,5,2,8,7};
-          //oneDQue.sortArrayByParity(nums);
-            oneDQue.sortArrayByParityII(nums);
+//          int[] nums = {4,2,5,9,3,6,5,2,8,7};
+//          //oneDQue.sortArrayByParity(nums);
+//            oneDQue.sortArrayByParityII(nums);
 
-          Arrays.stream(nums).forEach(x-> System.out.print(x+", "));
+//          Arrays.stream(nums).forEach(x-> System.out.print(x+", "));
+
+          int []nums = {4,5,0,-2,-3,1};
+          int k = 5;
+          System.out.print(oneDQue.subarraysDivByK(nums,k));
 
 
 
