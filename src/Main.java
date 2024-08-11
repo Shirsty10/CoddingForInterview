@@ -1,13 +1,13 @@
 import com.shirsty.data.structure.Array.BFSBased.ShortestPath;
 import com.shirsty.data.structure.Array.DFSBased.IslandBased;
 import com.shirsty.data.structure.Array.IntervalBased.IntervalOverlap;
+import com.shirsty.data.structure.Array.IntervalBased.MeetingRoom;
 import com.shirsty.data.structure.Array.MatrixBased;
 import com.shirsty.data.structure.Array.OneDimenArrayQue;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
+import com.shirsty.data.structure.DP.EasyDPWithLoop;
 import com.shirsty.data.structure.String.Anangram;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -92,9 +92,9 @@ public class Main {
 //        List<Integer> list = matrixBased.spiralOrder(matrix);
 //        list.stream().forEach(x-> System.out.print(x + " "));
 
-        int matrix2[][] = {{1,2,3},
-                      {4,5,6},
-                      {7,8,9}};
+//        int matrix2[][] = {{1,2,3},
+//                      {4,5,6},
+//                      {7,8,9}};
 //         matrixBased.rotate(matrix2);
 //        Arrays.stream(matrix2)
 //        .flatMapToInt(Arrays:: stream)
@@ -151,17 +151,17 @@ public class Main {
 
 //          Arrays.stream(nums).forEach(x-> System.out.print(x+", "));
 
-          int []nums = {4,5,0,-2,-3,1};
-          int k = 5;
-          System.out.print(oneDQue.subarraysDivByK(nums,k));
+//          int []nums = {4,5,0,-2,-3,1};
+//          int k = 5;
+//          System.out.print(oneDQue.subarraysDivByK(nums,k));
 
 
 
 
 
-//------------------------------------Interval Baes Question ---------------------------------------------------------
+//------------------------------------Interval Based Question ---------------------------------------------------------
 
-        IntervalOverlap intervalOverlap = new IntervalOverlap();
+//        IntervalOverlap intervalOverlap = new IntervalOverlap();
 //        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
 //         System.out.println("Min Arrows to Burst all balloons - " + intervalOverlap.findMinArrowShots(points));
 
@@ -178,6 +178,12 @@ public class Main {
 //        int ans[][] = intervalOverlap.intervalIntersection(firstList,secondList);
 //
 //        Arrays.stream(ans).forEach(row->System.out.print(Arrays.toString(row) + " "));
+
+        MeetingRoom mroom = new MeetingRoom();
+        int[][] meetings = {{0,10},{1,5},{2,7},{3,4}};
+        int n = 2;
+
+        System.out.print("Number of the room that held the most meetings - " + mroom.mostBooked(n,meetings));
 
  //------------------------------------DFS Based Question-------------------------------------------------------------
 
@@ -203,5 +209,26 @@ public class Main {
 
 //        int [][]grid = {{0,0,0},{1,1,0},{1,1,0}};
 //        System.out.println("Shorstest Path : "+ sp.shortestPathBinaryMatrix(grid));
+
+
+//------------------------------------DP - WithLoop-------------------------------------------------------------
+
+//        EasyDPWithLoop easyDPWithLoop = new EasyDPWithLoop();
+//        int[] nums = {1,2,3};
+//        int target = 4;
+//        int ans = easyDPWithLoop.combinationSum4(nums,target);
+//        System.out.print("Combination Sum - " + ans);
+
+
+
+
+
+
+
     }
+
+
+
+
+
 }

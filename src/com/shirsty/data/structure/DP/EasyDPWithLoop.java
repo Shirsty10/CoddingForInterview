@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class EasyDPWithLoop {
 
-    int[] dp;
+
     //LeetCode - 377. Combination Sum IV
     /*Given an array of distinct integers nums and a target integer target, return the number of possible combinations
        that add up to target.
@@ -27,12 +27,12 @@ public class EasyDPWithLoop {
         Note that different sequences are counted as different combinations.
      */
     public int combinationSum4(int[] nums, int target) {
-        dp=new int[target+1];
+        int[] dp=new int[target+1];
         Arrays.fill(dp,-1);
-        return helper(nums, target, target);
+        return helper(nums, target, target,dp);
     }
 
-    private int helper(int[] nums,int target, int val){
+    private int helper(int[] nums,int target, int val,int[] dp){
         if(val< 0) return 0;
 
         if(val ==0){
@@ -43,7 +43,7 @@ public class EasyDPWithLoop {
         }
         int count=0; //use a local variable for count
         for(int i=0;i<nums.length;i++){
-            count+=helper(nums,target, val-nums[i]);
+            count+=helper(nums,target, val-nums[i],dp);
         }
         return dp[val] =count;
     }
