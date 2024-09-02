@@ -7,7 +7,11 @@ import com.shirsty.data.structure.Array.OneDimenArrayQue;
 import com.shirsty.data.structure.Array.Permutation;
 import com.shirsty.data.structure.Array.TwoSum;
 import com.shirsty.data.structure.DP.EasyDPWithLoop;
+import com.shirsty.data.structure.Recursion.CombintionSum;
 import com.shirsty.data.structure.String.Anangram;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -179,11 +183,11 @@ public class Main {
 //
 //        Arrays.stream(ans).forEach(row->System.out.print(Arrays.toString(row) + " "));
 
-        MeetingRoom mroom = new MeetingRoom();
-        int[][] meetings = {{0,10},{1,5},{2,7},{3,4}};
-        int n = 2;
-
-        System.out.print("Number of the room that held the most meetings - " + mroom.mostBooked(n,meetings));
+//        MeetingRoom mroom = new MeetingRoom();
+//        int[][] meetings = {{0,10},{1,5},{2,7},{3,4}};
+//        int n = 2;
+//
+//        System.out.print("Number of the room that held the most meetings - " + mroom.mostBooked(n,meetings));
 
  //------------------------------------DFS Based Question-------------------------------------------------------------
 
@@ -219,6 +223,12 @@ public class Main {
 //        int ans = easyDPWithLoop.combinationSum4(nums,target);
 //        System.out.print("Combination Sum - " + ans);
 
+//---------------------------------------------Recursion---------------------------------------------------------------
+        CombintionSum csum = new CombintionSum();
+        int k = 3, n = 9;
+        List<List<Integer>> res = csum.combinationSum3(k,n);
+
+        res.stream().forEach(row -> System.out.print(row + ", "));
 
 
 
